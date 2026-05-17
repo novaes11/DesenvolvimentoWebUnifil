@@ -50,8 +50,9 @@ h2 {
 }
 
 .lista-principal {
+    list-style-position: inside;
+    list-style-type: decimal;
     padding-left: 0;
-    margin-left: 20px;
 }
 
 .lista-principal > li {
@@ -63,7 +64,7 @@ h2 {
 
 .lista-secundaria {
     list-style-position: inside;
-    list-style-type: square;    
+    list-style-type: square;
     margin-top: 10px;
     padding-left: 20px;
 }
