@@ -1,4 +1,11 @@
-/* Estilização da tabela e bordas (border-collapse conforme slide) */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Estilização da tabela e bordas (border-collapse conforme slide/aula) */
 table {
     width: 90%;
     margin: 20px auto;
@@ -28,7 +35,7 @@ th {
     color: #ffffff; 
 }
 
-/* Cor de fundo 2 (utilizando nth-child para listras, conforme slide) */
+/* Cor de fundo 2 (utilizando nth-child para listras, conforme slide/aula) */
 tr:nth-child(even) td {
     background-color: #D6EEEE;
 }
