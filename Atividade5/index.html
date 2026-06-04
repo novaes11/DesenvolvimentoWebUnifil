@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formulário de Cadastro Responsivo</title>
+<style>
+    /* -----------------------------------------------------------
+       1. ESTILOS BASE (MOBILE-FIRST) - Padrão para telas menores
+    ----------------------------------------------------------- */
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #e9ecef;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        padding: 15px; /* Padding menor no mobile */
+        box-sizing: border-box;
+    }
+    
+    form {
+        background-color: #ffffff;
+        width: 100%;
+        max-width: 700px; /* Aumentado ligeiramente para o layout em 2 colunas */
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    fieldset {
+        border: 1px solid #dee2e6;
+        border-radius: 10px;
+        padding: 20px;
+        margin: 0;
+        /* No mobile, usamos flex-direction: column para empilhar tudo */
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    legend {
+        font-size: 1.3em;
+        font-weight: bold;
+        color: #343a40;
+        padding: 0 12px;
+    }
+
+    .grupo-campo {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        width: 100%; /* No mobile, ocupa a largura total */
+    }
+
+    label {
+        font-weight: 600;
+        font-size: 0.95em;
+        color: #495057;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="date"],
+    select,
+    textarea,
+    input[type="file"] {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ced4da;
+        border-radius: 8px;
+        font-family: inherit;
+        font-size: 1em;
+        box-sizing: border-box;
+        transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    textarea {
+        resize: vertical;
+        min-height: 100px;
+    }
+
+    /* Efeito ao focar (:focus) */
+    input:focus,
+    select:focus,
+    textarea:focus {
+        border-color: #fca311;
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(252, 163, 17, 0.25);
+    }
+
+    .grupo-opcoes {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        padding-top: 5px;
+    }
+
+    .grupo-opcoes label {
+        font-weight: normal;
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        cursor: pointer;
+    }
+
+    button {
+        background-color: #14213d;
+        color: #ffffff;
+        font-weight: bold;
+        font-size: 1.1em;
+        padding: 15px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.1s;
+        margin-top: 15px;
+        width: 100%;
+    }
+
+    /* Hover nos botões */
+    button:hover {
+        background-color: #000000;
+    }
+
+    button:active {
+        transform: scale(0.98);
+    }
+
+    /* -----------------------------------------------------------
+       2. ESTILOS RESPONSIVOS (DESKTOP) - Ativado acima de 600px
+    ----------------------------------------------------------- */
+    @media (min-width: 600px) {
+        body {
+            padding: 30px; /* Mais respiro nas laterais */
+        }
+
+        form {
+            padding: 30px;
+        }
+
+        fieldset {
+            /* Mudamos de Flex para Grid no Desktop */
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Cria duas colunas iguais */
+            gap: 20px; /* Aumenta o espaçamento entre campos */
+        }
+
+        /* Faz a legenda ocupar as duas colunas */
+        legend {
+            grid-column: span 2;
+            margin-bottom: 5px;
+        }
+
+        /* Classes de utilidade que definem o layout */
+        .inteiro {
+            grid-column: span 2; /* Ocupa a linha toda */
+        }
+
+        .metade {
+            grid-column: span 1; /* Ocupa apenas uma coluna (50%) */
+        }
+    }
+</style>
+</head>
+<body>
+
+<form action="#" method="POST" enctype="multipart/form-data">
+    <fieldset>
+        <legend>Cadastro Completo</legend>
+
+        <div class="grupo-campo metade">
+            <label for="nome">Nome Completo</label>
+            <input type="text" id="nome" name="nome" required placeholder="Digite seu nome">
+        </div>
+
+        <div class="grupo-campo metade">
+            <label for="email">E-mail Profissional</label>
+            <input type="email" id="email" name="email" required placeholder="exemplo@email.com">
+        </div>
+
+        <div class="grupo-campo metade">
+            <label for="senha">Senha</label>
+            <input type="password" id="senha" name="senha" required placeholder="Mínimo 8 caracteres">
+        </div>
+
+        <div class="grupo-campo metade">
+            <label for="data-nascimento">Data de nascimento</label>
+            <input type="date" id="data-nascimento" name="data-nascimento" required>
+        </div>
+
+        <div class="grupo-campo metade">
+            <label for="curso">Curso de Interesse</label>
+            <select id="curso" name="curso" required>
+                <option value="" disabled selected>Selecione seu curso...</option>
+                <option value="desenvolvimento">Desenvolvimento Full Stack</option>
+                <option value="dados">Ciência de Dados</option>
+                <option value="ux-ui">UX/UI Design</option>
+                <option value="marketing">Marketing Digital</option>
+            </select>
+        </div>
+
+        <div class="grupo-campo metade">
+            <label>Sexo</label>
+            <div class="grupo-opcoes">
+                <label><input type="radio" name="sexo" value="masculino" required> Masculino</label>
+                <label><input type="radio" name="sexo" value="feminino"> Feminino</label>
+                <label><input type="radio" name="sexo" value="outro"> Outro</label>
+            </div>
+        </div>
+
+        <div class="grupo-campo inteiro">
+            <label>Áreas de Interesse</label>
+            <div class="grupo-opcoes">
+                <label><input type="checkbox" name="interesses" value="frontend"> Front-end</label>
+                <label><input type="checkbox" name="interesses" value="backend"> Back-end</label>
+                <label><input type="checkbox" name="interesses" value="mobile"> Mobile</label>
+                <label><input type="checkbox" name="interesses" value="ai"> IA</label>
+                <label><input type="checkbox" name="interesses" value="cloud"> Cloud</label>
+            </div>
+        </div>
+
+        <div class="grupo-campo inteiro">
+            <label for="comentarios">Comentários Adicionais</label>
+            <textarea id="comentarios" name="comentarios" placeholder="Fale um pouco sobre suas expectativas..."></textarea>
+        </div>
+
+        <div class="grupo-campo inteiro">
+            <label for="foto">Upload de foto de perfil</label>
+            <input type="file" id="foto" name="foto" accept="image/*">
+        </div>
+
+        <div class="grupo-campo inteiro">
+            <button type="submit">Finalizar Cadastro</button>
+        </div>
+    </fieldset>
+</form>
+
+</body>
+</html>
