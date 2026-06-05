@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Formulário de Cadastro Responsivo</title>
+<title>Formulário de Cadastro (Responsivo)</title>
 <style>
     /* -----------------------------------------------------------
-       1. ESTILOS BASE (MOBILE-FIRST) - Padrão para telas menores
+       ESTILOS BASE (MOBILE-FIRST) - Padrão para telas menores
     ----------------------------------------------------------- */
     body {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         background-color: #e9ecef;
+        /* Estilos para o corpo da página, centralizado */
         display: flex;
         justify-content: center;
         align-items: center;
@@ -131,11 +132,11 @@
     }
 
     /* -----------------------------------------------------------
-       2. ESTILOS RESPONSIVOS (DESKTOP) - Ativado acima de 600px
+        ESTILOS RESPONSIVOS (DESKTOP) - Ativado acima de 600px
     ----------------------------------------------------------- */
     @media (min-width: 600px) {
         body {
-            padding: 30px; /* Mais respiro nas laterais */
+            padding: 30px; /* Mais respiro nas laterais, para não deixar colado os elementos */
         }
 
         form {
@@ -143,13 +144,13 @@
         }
 
         fieldset {
-            /* Mudamos de Flex para Grid no Desktop */
+            /* Ajustado de Flex para Grid no Desktop */
             display: grid;
             grid-template-columns: repeat(2, 1fr); /* Cria duas colunas iguais */
             gap: 20px; /* Aumenta o espaçamento entre campos */
         }
 
-        /* Faz a legenda ocupar as duas colunas */
+        /* Faz a legenda (titulo) ocupar as duas colunas */
         legend {
             grid-column: span 2;
             margin-bottom: 5px;
@@ -167,31 +168,37 @@
 </style>
 </head>
 <body>
-
+<!-- Formulário de cadastro -->
 <form action="#" method="POST" enctype="multipart/form-data">
     <fieldset>
+        <!-- Título do formulário -->
         <legend>Cadastro Completo</legend>
 
+        <!-- Campo de nome -->
         <div class="grupo-campo metade">
             <label for="nome">Nome Completo</label>
             <input type="text" id="nome" name="nome" required placeholder="Digite seu nome">
         </div>
 
+        <!-- Campo de e-mail -->
         <div class="grupo-campo metade">
             <label for="email">E-mail Profissional</label>
             <input type="email" id="email" name="email" required placeholder="exemplo@email.com">
         </div>
 
+        <!-- Campo de senha -->
         <div class="grupo-campo metade">
             <label for="senha">Senha</label>
             <input type="password" id="senha" name="senha" required placeholder="Mínimo 8 caracteres">
         </div>
 
+        <!-- Campo de data de nascimento -->
         <div class="grupo-campo metade">
             <label for="data-nascimento">Data de nascimento</label>
             <input type="date" id="data-nascimento" name="data-nascimento" required>
         </div>
 
+        <!-- Campo de curso de interesse -->
         <div class="grupo-campo metade">
             <label for="curso">Curso de Interesse</label>
             <select id="curso" name="curso" required>
@@ -203,6 +210,7 @@
             </select>
         </div>
 
+        <!-- Campo de sexo -->
         <div class="grupo-campo metade">
             <label>Sexo</label>
             <div class="grupo-opcoes">
@@ -212,6 +220,7 @@
             </div>
         </div>
 
+        <!-- Campo de áreas de interesse -->
         <div class="grupo-campo inteiro">
             <label>Áreas de Interesse</label>
             <div class="grupo-opcoes">
@@ -223,11 +232,13 @@
             </div>
         </div>
 
+        <!-- Campo de comentários adicionais -->
         <div class="grupo-campo inteiro">
             <label for="comentarios">Comentários Adicionais</label>
             <textarea id="comentarios" name="comentarios" placeholder="Fale um pouco sobre suas expectativas..."></textarea>
         </div>
 
+        <!-- Campo de upload de foto de perfil -->
         <div class="grupo-campo inteiro">
             <label for="foto">Upload de foto de perfil</label>
             <input type="file" id="foto" name="foto" accept="image/*">
