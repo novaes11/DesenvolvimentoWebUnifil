@@ -6,9 +6,9 @@
   box-sizing: border-box;
 }
 
-/* ================================
+/*
    Variáveis Globais
-   ================================ */
+*/
 :root {
   --bg-base: #111111;
   --bg-surface: #1a1a1a;
@@ -46,9 +46,9 @@
   --radius-full: 50%;
 }
 
-/* ================================
+/*
    Configurações Gerais
-   ================================ */
+*/
 html {
   scroll-behavior: smooth;
   font-size: 16px;
@@ -157,9 +157,9 @@ ol {
   margin-top: var(--space-md);
 }
 
-/* ================================
+/* 
    Cabeçalho e Navegação
-   ================================ */
+ */
 .cabecalho {
   position: fixed;
   top: 0;
@@ -290,9 +290,9 @@ ol {
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* ================================
+/* 
    Seção Inicial (Home)
-   ================================ */
+*/
 .inicio {
   min-height: 100vh;
   display: flex;
@@ -485,9 +485,9 @@ ol {
   transform: translateY(-2px);
 }
 
-/* ================================
+/*
    Seção Sobre Mim
-   ================================ */
+*/
 .sobre {
   background: var(--bg-surface-alt);
 }
@@ -631,9 +631,9 @@ ol {
   transition: width 1.2s ease-out;
 }
 
-/* ================================
+/*
    Certificações e Filtro
-   ================================ */
+*/
 .certificacoes-filtro {
   display: flex;
   justify-content: center;
@@ -737,9 +737,9 @@ ol {
   display: none;
 }
 
-/* ================================
+/*
    Projetos
-   ================================ */
+*/
 .projetos-grade {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
