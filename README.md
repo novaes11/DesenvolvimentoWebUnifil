@@ -16,7 +16,7 @@ Repositório destinado ao armazenamento e versionamento das atividades práticas
 | Atividade 02 | Estilização do projeto (Armageddon)     | [`/atividade-02`](./Atividade2) | Concluído | Indisponivel |
 | Atividade 04 | Criação/estilização de tabelas (Rotina) | [`/atividade-04`](./Atividade4) | Concluído | Indisponivel |
 | Atividade 05 | Criação/estilização de formulários | [`/atividade-05`](./Atividade5) | Concluído | Indisponivel |
-| Atividade 06 | Trabalho Final (portifólio) | [`/TrabalhoFinal`](./TrabalhoFinal) | Concluído | Indisponivel |
+| Atividade 06 | Trabalho Final (portifólio) | [`/TrabalhoFinal`](./TrabalhoFinal) | Concluído | [Visializar Portifolio](https://novaes11.github.io/DesenvolvimentoWebUnifil/) |
 
 ## 🚀 Como Executar
 
