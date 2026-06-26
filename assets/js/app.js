@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Destaca o link do menu correspondente à página atual
   function marcarLinkAtivo() {
-    const paginaAtual = window.location.pathname.split('/').pop() || 'mainIndex.html';
+    const paginaAtual = window.location.pathname.split('/').pop() || 'index.html';
     links.forEach(link => {
       link.classList.remove('navegacao-link--ativo');
       const href = link.getAttribute('href');
